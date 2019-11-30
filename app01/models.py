@@ -104,7 +104,15 @@ class Customer(models.Model):
     consultant = models.ForeignKey('UserProfile', verbose_name="销售", related_name='customers', blank=True, null=True, )
     class_list = models.ManyToManyField('ClassList', verbose_name="已报班级", blank=True)
 
+    def __str__(self):
+        return self.qq
+
     def show_class(self):
+        """
+        用于展示班级信息
+        str()调用Classlist的__str__方法
+        获取班级名的字符串
+        """
         return ','.join([str(i) for i in self.class_list.all()])
 
     def show_status(self):
@@ -124,7 +132,6 @@ class Customer(models.Model):
 
         return mark_safe('<span style="background-color: {};color: white;padding: 3px">{}</span>'.format(color_dict.get(self.status),
             self.get_status_display()))
-
 
 class Campuses(models.Model):
     """

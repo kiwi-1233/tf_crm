@@ -1,3 +1,10 @@
+<!--
+ * @Author: kiwi
+ * @Date: 2019-11-30 17:20:31
+ * @LastEditors: kiwi
+ * @LastEditTime: 2019-11-30 17:50:58
+ * @Description: 描述
+ -->
 {% extends 'layout.html' %}
 
 {% block content %}
@@ -28,7 +35,7 @@
             <td>{{ customer.qq }}</td>
             <td>{{ customer.get_sex_display }}</td>
             <td>{{ customer.birthday }}</td>
-            <td>{{ customer.phone }}</td>
+            <td>{{ customer.phone|default:'-' }}</td>
             <td>{{ customer.get_source_display }}</td>
             <td>{{ customer.course }}</td>
             <td>{{ customer.get_class_type_display }}</td>

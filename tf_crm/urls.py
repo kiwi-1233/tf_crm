@@ -1,3 +1,17 @@
+'''
+@Author: kiwi
+@Date: 2019-11-30 15:31:48
+@LastEditors: kiwi
+@LastEditTime: 2019-11-30 16:08:10
+@Description: 描述
+'''
+'''
+@Author: kiwi
+@Date: 2019-11-30 15:31:48
+@LastEditors: kiwi
+@LastEditTime: 2019-11-30 16:07:27
+@Description: 描述
+'''
 """tf_crm URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,5 +32,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('app01.urls')),
+    url(r'^',include('app01.urls')),
 ]
