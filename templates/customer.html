@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>QQ</th>
+            <th>性别</th>
+            <th>出生日期</th>
+            <th>手机号</th>
+            <th>客户来源</th>
+            <th>咨询课程</th>
+            <th>班级类型</th>
+            <th>状态</th>
+            <th>最后跟进日期</th>
+            <th>销售</th>
+            <th>班级</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in all_customer %}
+            <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ customer.name|default:'-' }}</td>
+            <td>{{ customer.qq }}</td>
+            <td>{{ customer.get_sex_display }}</td>
+            <td>{{ customer.birthday }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.get_source_display }}</td>
+            <td>{{ customer.course }}</td>
+            <td>{{ customer.get_class_type_display }}</td>
+            <td> {{ customer.show_status }} </td>
+            <td>{{ customer.last_consult_date }}</td>
+            <td>{{ customer.consultant }}</td>
+            <td> {{ customer.show_class }}
+{#                {% for class_list in customer.class_list.all  %}#}
+{#                    {{ class_list }}#}
+{#                {% endfor %}#}
+              </td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+    </table>
+
+
+{% endblock %}
